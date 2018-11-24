@@ -22,15 +22,25 @@ namespace QueueModelling
 		private int workTime;
 		private int startTime;
 		private int idleCount;
-		public Server(queue inputQueue, List<Stats> statsQueue)
+		
+		/// <summary>
+		/// Setup a server or work to take items from the Q and work on them.
+		/// </summary>
+		/// <param name="inputQueue">queue to take work from.</param>
+		/// <param name="statsList">List of stats for finished items.</param>
+		public Server(queue inputQueue, List<Stats> statsList)
 		{
 			inQ = inputQueue;
-			statsQ = statsQueue;
+			statsQ = statsList;
 			workTime = 0;
 			idleCount = 0;
 			startTime = 0;
 		}
 		
+		/// <summary>
+		/// tell the current server to move forward 1 tick. 
+		/// </summary>
+		/// <param name="currentTime">current tick value in relation to the 0 tick of time.</param>
 		public void updateWorkItem(int currentTime)
 		{
 			//server doing nothing condition
@@ -67,6 +77,10 @@ namespace QueueModelling
 			}			
 		}
 		
+		/// <summary>
+		/// Get the number of ticks the server was idle.
+		/// </summary>
+		/// <returns>idle tick count total</returns>
 		public int getIdleCount()
 		{
 			return idleCount;

@@ -25,6 +25,14 @@ namespace QueueModelling
 		private List<int> qLengths;
 		private List<WorkItem> workToDo;
 		
+		/// <summary>
+		/// Init the tester with work time, deviation, inject rate, inject divation, and test duration.
+		/// </summary>
+		/// <param name="duration">total ticks for the model to run.</param>
+		/// <param name="injectRate">Rate at which new work will be injected.</param>
+		/// <param name="injectDeviation">Standard deviation for work injection.</param>
+		/// <param name="avgWorkTime">Average time to do work items.</param>
+		/// <param name="stdevWorkTime">Standard Deviation of work time.</param>
 		public Tester(int duration, double injectRate, double injectDeviation, double avgWorkTime, double stdevWorkTime)
 		{	
 			inputQueue = new queue();
@@ -38,6 +46,12 @@ namespace QueueModelling
 			generateWorkItemList(testDuration, avgWorkTime, stdevWorkTime);
 		}
 		
+		/// <summary>
+		/// Setup initial work item list. 
+		/// </summary>
+		/// <param name="itemCount">Amount of work items to do.</param>
+		/// <param name="avgWT">Average work time in ticks.</param>
+		/// <param name="stdvWT">Standard Deviation of work time in ticks.</param>
 		private void generateWorkItemList(int itemCount, double avgWT, double stdvWT)
 		{
 			Gaussian randomizer = new Gaussian();
@@ -58,6 +72,9 @@ namespace QueueModelling
 			}
 		}
 		
+		/// <summary>
+		/// Executes the test with the generated work item set.
+		/// </summary>
 		public void executeTest()
 		{
 			int workItemIterator = 0;
@@ -73,6 +90,10 @@ namespace QueueModelling
 			}				
 		}
 		
+		/// <summary>
+		/// Compute the average Q length for the sim.
+		/// </summary>
+		/// <returns>Average Q Length</returns>
 		public double getQAvgLength()
 		{
 			double total = 0;
@@ -83,6 +104,10 @@ namespace QueueModelling
 			return total/(double)qLengths.Count;
 		}
 		
+		/// <summary>
+		/// Compute the Q highest enqued count.
+		/// </summary>
+		/// <returns>High water mark</returns>
 		public double getQHighWaterMark()
 		{
 			double highest = 0;
@@ -96,6 +121,10 @@ namespace QueueModelling
 			return highest;
 		}
 		
+		/// <summary>
+		/// Calculate the Q lowest enqued count.
+		/// </summary>
+		/// <returns>Low Water Mark</returns>
 		public double getQLowWaterMark()
 		{
 			double Lowest = testDuration;
@@ -109,11 +138,19 @@ namespace QueueModelling
 			return Lowest;
 		}
 		
+		/// <summary>
+		/// Calculate the total completed count.
+		/// </summary>
+		/// <returns>The total number of completed items.</returns>
 		public double getCmpCount()			
 		{
 			return (double)QResults.Count;
 		}
 		
+		/// <summary>
+		/// Calucate the average work item wait time.
+		/// </summary>
+		/// <returns>average wait time.</returns>
 		public double getWaitAvg()			
 		{
 			double total = 0;
@@ -124,6 +161,10 @@ namespace QueueModelling
 			return total/(double)QResults.Count;
 		}
 		
+		/// <summary>
+		/// Calculate the min wait time for work items.
+		/// </summary>
+		/// <returns>min wait time encountered during the sim.</returns>
 		public double getWaitMin()			
 		{
 			double Lowest = testDuration;
@@ -137,6 +178,10 @@ namespace QueueModelling
 			return Lowest;
 		}
 		
+		/// <summary>
+		/// Calculate the Max Wait time for work items in the sim.
+		/// </summary>
+		/// <returns>Max wait time encountered during the sim.</returns>
 		public double getWaitMax()			
 		{
 			double highest = 0;
@@ -150,11 +195,19 @@ namespace QueueModelling
 			return highest;
 		}
 		
+		/// <summary>
+		/// Calculate the worker average idle %
+		/// </summary>
+		/// <returns>Idle % of the worker</returns>
 		public double getIdlePercent()
 		{
 			return (double)worker.getIdleCount()/(double)testDuration;
 		}
 		
+		/// <summary>
+		/// Calculate the Avg Work time for work items in the sim.
+		/// </summary>
+		/// <returns>Avg Work time encountered during the sim.</returns>
 		public double getAvgWorkTime()
 		{
 			double total = 0;
@@ -165,6 +218,10 @@ namespace QueueModelling
 			return total/(double)QResults.Count;
 		}
 		
+		/// <summary>
+		/// Calculate the min work time for work items.
+		/// </summary>
+		/// <returns>min work time encountered during the sim.</returns>
 		public double getMinWorkTime()
 		{
 			double Lowest = testDuration;
@@ -178,6 +235,10 @@ namespace QueueModelling
 			return Lowest;
 		}
 		
+		/// <summary>
+		/// Calculate the Max Work time for work items in the sim.
+		/// </summary>
+		/// <returns>Max Work time encountered during the sim.</returns>
 		public double getMaxWorkTime()
 		{
 			double highest = 0;
@@ -191,6 +252,10 @@ namespace QueueModelling
 			return highest;
 		}
 		
+		/// <summary>
+		/// Calculate the Avg Lead time for work items in the sim.
+		/// </summary>
+		/// <returns>Avg Lead time encountered during the sim.</returns>
 		public double getAvgLeadTime()
 		{
 			double total = 0;
@@ -201,6 +266,10 @@ namespace QueueModelling
 			return total/(double)QResults.Count;
 		}
 		
+		/// <summary>
+		/// Calculate the min Lead time for work items.
+		/// </summary>
+		/// <returns>min Lead time encountered during the sim.</returns>
 		public double getMinLeadTime()
 		{
 			double Lowest = testDuration;
@@ -214,6 +283,10 @@ namespace QueueModelling
 			return Lowest;
 		}
 		
+		/// <summary>
+		/// Calculate the Max Lead time for work items in the sim.
+		/// </summary>
+		/// <returns>Max Lead time encountered during the sim.</returns>
 		public double getMaxLeadTime()
 		{
 			double highest = 0;
@@ -227,6 +300,10 @@ namespace QueueModelling
 			return highest;
 		}
 		
+		/// <summary>
+		/// Calculate the Avg Touch time % for work items in the sim.
+		/// </summary>
+		/// <returns>Avg Touch time % encountered during the sim.</returns>
 		public double getAvgTouchTimePercent()
 		{
 			double total = 0;
@@ -237,6 +314,10 @@ namespace QueueModelling
 			return total/(double)QResults.Count;
 		}
 		
+		/// <summary>
+		/// Calculate the min Touch time % for work items.
+		/// </summary>
+		/// <returns>min Touch time % encountered during the sim.</returns>
 		public double getMinTouchTimePercent()
 		{
 			double Lowest = testDuration;
@@ -250,6 +331,10 @@ namespace QueueModelling
 			return Lowest;
 		}
 		
+		/// <summary>
+		/// Calculate the Max Touch time % for work items in the sim.
+		/// </summary>
+		/// <returns>Max Touch time % encountered during the sim.</returns>
 		public double getMaxTouchTimePercent()
 		{
 			double highest = 0;

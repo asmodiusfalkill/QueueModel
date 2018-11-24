@@ -12,6 +12,10 @@ namespace QueueModelling
 {
 	class Program
 	{
+		/// <summary>
+		/// Execute the queue model. It sets it up and then reports the results to the command line.
+		/// </summary>
+		/// <param name="args">Currently ignored</param>
 		public static void Main(string[] args)
 		{
 			Console.WriteLine("Running Simulation");

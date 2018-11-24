@@ -22,6 +22,11 @@ namespace QueueModelling
 		public int deQTime;
 		public int addTime;
 		
+		/// <summary>
+		/// Initialize a work item to basis values and with a required work amount.
+		/// </summary>
+		/// <param name="avgWorkTime"></param>
+		/// <param name="standardDevWorkTime"></param>
 		public WorkItem(double avgWorkTime, double standardDevWorkTime)
 		{
 			avgWT = avgWorkTime;
@@ -32,16 +37,28 @@ namespace QueueModelling
 			requiredWork = randomizer.RandomGauss(avgWT, stdevWT);
 		}
 		
+		/// <summary>
+		/// Returns previously set work average.
+		/// </summary>
+		/// <returns>Work item average.</returns>
 		public double getAvg()
 		{
 			return avgWT;
 		}
 		
+		/// <summary>
+		/// Gives the standard deviation previouly set.
+		/// </summary>
+		/// <returns>standard deviation of the work item.</returns>
 		public double getStdev()
 		{
 			return stdevWT;
 		}
 		
+		/// <summary>
+		/// Returns previously calculated work required amount.
+		/// </summary>
+		/// <returns></returns>
 		public double getCurrentRequiredAmount()
 		{
 			return requiredWork;

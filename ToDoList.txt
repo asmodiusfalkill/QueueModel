@@ -1,4 +1,3 @@
--Comment all functions
 -Comment all classes
 -Update the README
 -Add Unit tests for all methods/functions
