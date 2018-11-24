@@ -1,0 +1,16 @@
+-Setup a github
+-Comment all functions
+-Add Unit tests for all methods/functions
+-Refactor code to be more readable and maintainable
+-Setup 2 servers
+-Setup arbitrary count of servers
+-Change reporting mechanism to handle multiple things
+-Setup ability to run multiple sims
+-setup threading
+-Add multiple queues with priorities
+-Add xml modeling capability for system.
+-Setup complex modeling
+-Add variability based on server ability
+-Add server task preemption capability 
+-Add task switch overhead for stop working
+-Add task switch overhead for rework
