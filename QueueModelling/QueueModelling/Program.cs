@@ -10,6 +10,9 @@ using System;
 
 namespace QueueModelling
 {
+    /// <summary>
+    /// Class for execute the top level function. 
+    /// </summary>
 	class Program
 	{
 		/// <summary>

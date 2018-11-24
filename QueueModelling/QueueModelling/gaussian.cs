@@ -10,6 +10,9 @@ using System;
 
 namespace QueueModelling
 {
+    /// <summary>
+    /// Class for handling random number generation based on a normal distribution. 
+    /// </summary>
 	public class Gaussian
 	{
 	    private bool _available;

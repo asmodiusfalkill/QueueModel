@@ -12,7 +12,7 @@ using System.Collections.Generic;
 namespace QueueModelling
 {
 	/// <summary>
-	/// Description of queue.
+	/// Handles the queue and wrapps it with some good data gathering functionality.
 	/// </summary>
 	public class queue
 	{

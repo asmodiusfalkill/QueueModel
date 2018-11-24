@@ -12,7 +12,7 @@ using System.Collections.Generic;
 namespace QueueModelling
 {
 	/// <summary>
-	/// Description of Tester.
+	/// Controls a test run by putting data into the input queue and calculating interesting stats at the end for reporting. 
 	/// </summary>
 	public class Tester
 	{

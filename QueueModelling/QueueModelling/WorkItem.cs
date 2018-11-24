@@ -11,7 +11,7 @@ using System;
 namespace QueueModelling
 {
 	/// <summary>
-	/// Description of WorkItem.
+	/// Describes a work item by how long it will take to do, when it was enqueued and dequed, and the deviation and the work time needed to complete this item.
 	/// </summary>
 	public class WorkItem
 	{
