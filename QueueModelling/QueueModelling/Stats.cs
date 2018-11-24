@@ -21,6 +21,9 @@ namespace QueueModelling
 		public int startWork;
 		public int endWork;
 		
+		/// <summary>
+		/// Q wait time item stayed in the queue.
+		/// </summary>
 		public int QWaitTime
 		{
 			get
@@ -29,6 +32,9 @@ namespace QueueModelling
 			}
 		}
 		
+		/// <summary>
+		/// Total amount of time the item was in work.
+		/// </summary>
 		public int workTime
 		{
 			get
@@ -37,6 +43,9 @@ namespace QueueModelling
 			}
 		}
 		
+		/// <summary>
+		/// Total amount of time the item was in the system.
+		/// </summary>
 		public int timeInSystem
 		{
 			get
@@ -45,6 +54,9 @@ namespace QueueModelling
 			}
 		}		
 		
+		/// <summary>
+		/// Ratio of work time to total time in system.
+		/// </summary>
 		public double touchTimeRatio
 		{
 			get 
@@ -53,6 +65,9 @@ namespace QueueModelling
 			}
 		}
 		
+		/// <summary>
+		/// Init all items to a 0.
+		/// </summary>
 		public Stats()
 		{
 			currentTime = 0;
