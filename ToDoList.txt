@@ -1,5 +1,6 @@
--Setup a github
 -Comment all functions
+-Comment all classes
+-Update the README
 -Add Unit tests for all methods/functions
 -Refactor code to be more readable and maintainable
 -Setup 2 servers
