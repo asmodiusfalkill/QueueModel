@@ -11,7 +11,7 @@ using System;
 namespace QueueModelling
 {
 	/// <summary>
-	/// Description of Stats.
+	/// Contains various interesting stat elements for the queue model.
 	/// </summary>
 	public class Stats
 	{

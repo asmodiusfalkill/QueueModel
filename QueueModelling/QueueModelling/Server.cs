@@ -12,7 +12,7 @@ using System.Collections.Generic;
 namespace QueueModelling
 {
 	/// <summary>
-	/// Description of Server.
+	/// An object that abstracts a work center or worker in a queue system. 
 	/// </summary>
 	public class Server
 	{
