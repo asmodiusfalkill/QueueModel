@@ -67,7 +67,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="GaussianTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="queueTests.cs" />
     <Compile Include="ServerTests.cs" />
     <Compile Include="StatsTests.cs" />
     <Compile Include="WorkItemTests.cs" />

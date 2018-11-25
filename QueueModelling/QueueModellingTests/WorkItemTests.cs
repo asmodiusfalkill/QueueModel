@@ -98,7 +98,7 @@ namespace QueueModellingTests
             // Arrange
             double avgToTest = 5;
             double stdevToTest = .1;
-            double threholdPrecent = .2;
+            double threholdPrecent = .3;
             int sampleCount = 1000;
 
             for (int i = 1; i < 100; i++)

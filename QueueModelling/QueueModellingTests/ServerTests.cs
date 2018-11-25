@@ -17,10 +17,17 @@ namespace QueueModellingTests
         [TestInitialize]
         public void TestInitialize()
         {
-            this.mockRepository = new MockRepository(MockBehavior.Strict);
+            this.mockRepository = new MockRepository(MockBehavior.Strict) { CallBase = true };
 
             this.mockqueue = this.mockRepository.Create<queue>();
             this.mockList = this.mockRepository.Create<List<Stats>>();
+            WorkItem mockItem = new WorkItem(5, .1, 6)
+            {
+                enQTime = 0,
+                deQTime = 2,
+                addTime = 0
+            };
+            this.mockqueue.Setup(m => m.dequeue(It.IsAny<int>())).Returns(mockItem);
         }
 
         [TestCleanup]
@@ -36,32 +43,25 @@ namespace QueueModellingTests
                 this.mockList.Object);
         }
 
+        /// <summary>
+        /// This tests update work item and idle count. It calls idle queue as well.
+        /// </summary>
         [TestMethod]
         public void updateWorkItem_StateUnderTest_ExpectedBehavior()
         {
             // Arrange
-            var unitUnderTest = CreateServer();
-            int currentTime = 12;
+            var unitUnderTest = CreateServer();            
 
             // Act
-            unitUnderTest.updateWorkItem(
-                currentTime);
-
+            for (int i = 0; i < 20; i++)
+            {
+                unitUnderTest.updateWorkItem(
+                    i);
+            }
+            int result = unitUnderTest.getIdleCount();
+            
             // Assert
-            Assert.Fail();
-        }
-
-        [TestMethod]
-        public void getIdleCount_StateUnderTest_ExpectedBehavior()
-        {
-            // Arrange
-            var unitUnderTest = CreateServer();
-
-            // Act
-            var result = unitUnderTest.getIdleCount();
-
-            // Assert
-            Assert.Fail();
+            Assert.AreEqual(0, result);
         }
     }
 }

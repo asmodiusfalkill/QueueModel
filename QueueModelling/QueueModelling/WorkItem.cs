@@ -36,12 +36,27 @@ namespace QueueModelling
 			Gaussian randomizer = new Gaussian();
 			requiredWork = randomizer.RandomGauss(avgWT, stdevWT);
 		}
-		
-		/// <summary>
-		/// Returns previously set work average.
+
+        /// <summary>
+		/// Initialize a work item to basis values and with a required work amount.
 		/// </summary>
-		/// <returns>Work item average.</returns>
-		public double getAvg()
+		/// <param name="avgWorkTime"></param>
+		/// <param name="standardDevWorkTime"></param>
+		public WorkItem(double avgWorkTime, double standardDevWorkTime, double reqWork)
+        {
+            avgWT = avgWorkTime;
+            stdevWT = standardDevWorkTime;
+            enQTime = 0;
+            deQTime = 0;
+            Gaussian randomizer = new Gaussian();
+            requiredWork = reqWork;
+        }
+
+        /// <summary>
+        /// Returns previously set work average.
+        /// </summary>
+        /// <returns>Work item average.</returns>
+        public double getAvg()
 		{
 			return avgWT;
 		}
