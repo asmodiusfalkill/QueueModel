@@ -86,7 +86,7 @@ namespace QueueModellingTests
             // Arrange
             var unitUnderTest = CreateGaussian();
             double sigma = .1;
-            double thresholdPercent = .2;
+            double thresholdPercent = .3;
             int sampleCount = 1000;
 
 
