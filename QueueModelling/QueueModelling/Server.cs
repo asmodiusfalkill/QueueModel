@@ -46,7 +46,8 @@ namespace QueueModelling
 			//server doing nothing condition
 			if (currentWorkItem == null)
 			{
-				currentWorkItem = inQ.dequeue(currentTime);				
+                currentWorkItem = inQ.dequeue(currentTime);
+
 				workTime = 0;
 				//no work to do.
 				if (currentWorkItem == null)

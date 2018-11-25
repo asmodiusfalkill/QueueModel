@@ -42,7 +42,7 @@ namespace QueueModelling
 		/// </summary>
 		/// <param name="currentTime">The current time in ticks from 0 tick.</param>
 		/// <returns>The work item. It is null if there is nothing on the queue.</returns>
-		public WorkItem dequeue(int currentTime)
+		public virtual WorkItem dequeue(int currentTime)
 		{
 			WorkItem returnItem = null;
 			if (currentQueue.Count > 0)
